@@ -311,6 +311,808 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://onaple.duoshuo.com/2017/03/05/程序员自我修养简记/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="onaple">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="onaple‘s Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="onaple‘s Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/05/程序员自我修养简记/" itemprop="url">
+                  程序员自我修养简记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-05T19:08:29+08:00">
+                2017-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/05/程序员自我修养简记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/05/程序员自我修养简记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="计算机基础"><a href="#计算机基础" class="headerlink" title="计算机基础"></a>计算机基础</h1><ol>
+<li>对于系统程序开发者来说，计算机三个部件最为关键：CPU、内存、I/O控制芯片。</li>
+<li>高速的北桥芯片：为了协调CPU、内存和高速的图形设备。此时慢速的I/O总线已经无法满足需求。</li>
+<li>低速设备的南桥芯片：由于北桥芯片运行速度非常高，于是人们有设计了低速设备的南桥芯片，磁盘、usb、键盘、鼠标等设备都连接在南桥芯片上，由南桥芯片将他们汇总后链接到北桥上。</li>
+<li>SMP(对称多处理器)多CPU的计算机；简单的来讲就是每个CPU在系统中所处的地位和发挥的功能是一样的，是相互对称的。使用场景：大型数据库、网络服务器上，他们要求同时处理大量的请求，而这些请求时相互独立的，所以多处理器就可以最大效能的发挥作用。多处理器最多的应用场合时这些商用的服务器和需要处理大量计算的环境。（CPU频率碰到了天花板4GHZ,才出现了SMP）.</li>
+<li>多核处理器：实际上就是SMP的简化版。这是由于多处理器成本高，所以厂商将多个处理器“合并在一起打包出售”，这些被打包的处理器之间共享比较昂贵的缓存部件，只保留多个核心；并且以一个处理器的外包装进行出售，价格比单核处理器只贵一点。当然他们在缓存共享方面有细微的差别，但是从程序员的角度来看，他们的区别很小，逻辑上看他们是完全相同的。</li>
+<li>系统软件：传统意义上一般将用于管理计算机本身的软件称为系统软件，以区别普通的应用程序。系统软件可以分为两块；一块是平台性的，比如，操作系统内核、驱动程序、运行库和数以千记得系统工具；另一块是用于程序开发的，比如，编译器、链接器、汇编器等开发工具和开发库。</li>
+<li>计算机系统软件体系结构采用一种层的结构：计算机科学领域的任何问题都可以通过增加一个间接的中间层来解决。</li>
+<li><p>接口：每个层次之间都必须要相互通信，则需要一个通信协议，我们一般将其称为接口。接口下面那层是提供者，上层是使用者。除了硬件和应用程序，其他层都是中间层，每个中间层都是对它下面的那层的包装与扩展。正是由于这些中间层的存在，使得应用程序和硬件之间保持相对独立。</p>
+</li>
+<li><p>在软件体系结构中：位于最高层的是应用程序。从整个层次结构上来看，开发工具与应用程序属于同一层，因为他们都使用同一接口，那就是操作系统应用程序编程接口。应用程序接口的提供者是运行库。<br>运行库使用操作系统提供的系统调用接口，系统调用接口往往以软中断的方式提供；比如，linux使用0x80号中断作为系统调用接口。<br>硬件规格: 操作系统内核层对于硬件层来说是硬件接口的使用者，而硬件是接口的定义者，硬件的接口的定义决定了操作系统的内核，具体来讲就是驱动程序如何操作硬件，如何与硬件通讯，这种接口被叫做硬件规格。</p>
+</li>
+<li><p>操作系统：一个功能是提供抽象的接口，另外一个主要功能就是管理硬件资源。</p>
+</li>
+<li>多道程序的设计：编写一个监控程序，当某个程序暂时无需使用CPU时，监控程序就把另外的正在等待CPU资源的程序启动起来，使得CPU能够充分利用起来，这种被称为多到程序。</li>
+<li>分时系统：每个程序运行一段时间后都主动让出CPU给其他的程序，使得一段时间内每个程序都有机会运行一小段时间。</li>
+<li>多任务系统：操作系统接管了所有的硬件资源，并且本身运行在一个受硬件保护的级别，每个进程都有自己的独立空间，使得进程之间的地址相互隔离。CPU由操作系统同一分配，每个进程都会根据进程优先级的高低都有机会得到CPU.但是，如果运行超出了一定的时间，操作系统会暂停该进程，将CPU资源分配给其他的等待运行的进程，这种CPU分配方式为抢占式。</li>
+<li>驱动程序可以看做事操作系统的一部分，它往往和系统内核一起运行在特权级别，但他与操作系统内核之间有一定的独立性，使得驱动程序有较好的灵活性。操作系统开发者为硬件生产商提供了一系列接口和框架，凡是按照这个接口和框架开发的驱动程序都可以在该操作系统上使用。</li>
+<li>进程的总体目标是希望每个进程从逻辑上看都可以独占计算机的资源。操作系统的多任务功能使得CPU能够在多个进程之间共享；从进程的角度看好像是他独占了CPU而不用考虑与其他进程分享CPU的事。操作系统的I/O抽象模型也很好的实现I/O设备的共享和抽象。内存通过虚拟地址空间；分段分页来实现共享。</li>
+</ol>
+<h1 id="为什么要虚拟内存："><a href="#为什么要虚拟内存：" class="headerlink" title="为什么要虚拟内存："></a>为什么要虚拟内存：</h1><p>如果程序直接在物理内存上使用，直接访问物理地址将带来很多问题：</p>
+<ol>
+<li>地址空间不隔离：所有程序都访问物理地址，程序所使用的内存空间不相互隔离，恶意的程序可以很容易改写其他程序的内存数据，以达到破坏的目的。有些非恶意、但有臭虫的程序可能不小心修改ill其他程序的数据，就会使其他程序崩溃。而使用虚拟地址空间可保证一个任务的失败不影响其他任务的执行。</li>
+<li>内存使用效率低：由于没有有效的内存管理机制，通常需要一个程序执行时，监控程序就将整个程序装载进内存然后执行。内存不够时会发生大量的数据交换，效率低下。</li>
+<li>程序运行的地址不稳定：因为程序每次需要装入运行时，我们都需要给他从内存中分配一块足够大的内存空间区域，这个区域位置不确定；这给程序的编写造成一定的麻烦，因为程序在编写时，它访问的数据和指令跳转时的目标地址很多都市固定的，这涉及到重定位问题。</li>
+</ol>
+<p>解决问题的思路就是增加中间层，即使用一种间接地址访问方法。我们把程序给出的地址看作是一种虚拟地址，然后通过某种映射，将虚拟地址转 换为物理地址。这样，只要我们能够妥善控制这个虚拟地址到物理地址的映射过程，就可以保证任意一个程序所能够访问的物理内存区域跟另一个程序相互不重叠，以达到地址空间隔离的效果。物理地址空间是真真实实存在的；虚拟地址空间是指虚拟的，而且每个进程只能访问自己的地址空间，这样就有效的做到了进程的隔离。</p>
+<h2 id="分段："><a href="#分段：" class="headerlink" title="分段："></a>分段：</h2><p>解决了第一个和第三个问题。首先，它做到了地址的隔离，如果程序访问越界，将会被硬件判断为非法访问，拒绝这个地址请求，并将这个请求报告给操作系统或者监控程序。再者，对于每个程序员来说，无论他们被分配到物理地址的那个区域，对于程序来说都是透明的。他们不需要关心物理地址的变化。    但分段没有解决内存使用效率问题；分段对内存区域的映射还是按照程序为单位；如果内存不足，被换入换出到磁盘的都是整个程序，这样势必会造成大量的磁盘访问操作，从而严重影响速度。这种方法换是显得比较粗糙，粒度比较大。<br>事实上，根据程序的局部性原理，当一个程序在运行时，在某个段内，它只是频繁的用到一小部分数据，也就是说，程序的很多数据其实在一段时间内都是不会被用到的。人们很自然的想到了更小粒度的内存分割和映射的方法，使得程序的局部性原理得到充分的利用，大大提高了内存使用率，这种方法就是分页。</p>
+<h2 id="分页："><a href="#分页：" class="headerlink" title="分页："></a>分页：</h2><p>提高了内存的使用率，减少了内存碎片的产生；保护也是页映射的目的之一。简单来说就是每个页可以设置权限属性，只有操作系统有权限修改这些属性。MMU都集成在CPU的内部了，不会以独立的部件存在。</p>
+<h1 id="线程基础"><a href="#线程基础" class="headerlink" title="线程基础"></a>线程基础</h1><p>线程：有时被称为轻量级的进程（LWP）,是程序执行流的最小单位。一个标准的线程是由线程ID\当前指令指针（PC）、寄存器集合和堆栈组成。通常意义上，一个进程由一到多个线程组成，各个线程之间共享程序的内存空间（包括代码段、数据段、堆等）以及一些进程级的资源（打开的文件和信号）。</p>
+<p>使用多线程的原因：</p>
+<ol>
+<li>某个操作可能会陷入长时间的等待，等待的线程会进入睡眠状态，无法继续执行，多线程执行可以有效的利用等待的时间。典型的例子是等待网络响应，这可能要花费数秒。</li>
+<li>某个操作（计算）会消耗大量的时间，如果只有一个线程，程序和用户之间的交互会中断。多线程可以让一个线程负责交互，另一个线程负责计算。</li>
+<li>程序本身就要求并发操作。、</li>
+<li>多CPU或多核计算机，本身具备同时执行多个线程的能力，因此单个线程程序无法全面的发挥计算机的全部计算能力。</li>
+<li>相对于多进程应用，多线程在数据共享方面效率要高得多。</li>
+</ol>
+<h1 id="线程的访问权限"><a href="#线程的访问权限" class="headerlink" title="线程的访问权限"></a>线程的访问权限</h1><p>线程的访问非常自由，它可以访问进程内存空间内的所有数据，甚至包括其他线程的堆栈（如果他知道其他线程的堆栈地址，这是很少见的情况），但实际运用中线程也拥有自己的私有存储空间：</p>
+<ol>
+<li>栈：尽管并非完全无法被其他线程访问，但一般情况下仍然可以认为是私有数据。</li>
+<li>线程局部存储，是某些操作系统为线程单独提供的私有空间，但通常只具有很有限的容量。</li>
+<li>寄存器：寄存器是执行流的基本数据，因此为线程私有。</li>
+</ol>
+<h1 id="从C程序员的角度看，数据在线程之间是否私有："><a href="#从C程序员的角度看，数据在线程之间是否私有：" class="headerlink" title="从C程序员的角度看，数据在线程之间是否私有："></a>从C程序员的角度看，数据在线程之间是否私有：</h1><p>私有：局部变量、函数参数、TLS线程局部存储数据</p>
+<p>线程之间共享进程所有：全局变量、堆上的数据、函数里的静态变量、程序代码，任何程序都有权读取并执行任何代码、打开的文件。</p>
+<p>线程调度：一个不断在处理器上切换不同线程的的行为。线程通常至少拥有三种状态：运行、就绪、等待。</p>
+<p>IO密集型线程：频繁等待的线程；CPU密集型线程：很少等待的线程；IO密集型的线程总比cpu密集型的线程容易得到优先级的提升。</p>
+<p>对于linux来说，线程并不是一个通用的概念；linux对多线程支持颇为贫乏；事实上，在linux内核中并不存在真正意义上的线程的概念。Linux将所有可执行的实体称为任务（TASK）,无论是进程换是线程。每一个任务概念上都类似于一个单进程的线程，具有内存空间、执行实体、文件资源。不过，linux下不同任务之间可以选择共享内存空间，因而在实际意义上，共享同一个内存空间的多个任务构成了一个进程，这些任务也就成为了这个进程里的线程。在linux下，用以下方法可以创建一个新的任务。</p>
+<table>
+<thead>
+<tr>
+<th>系统调用</th>
+<th style="text-align:left">作用</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fork</td>
+<td style="text-align:left">复制当前进程</td>
+<td style="text-align:left">新的任务启动并和本任务一起从fork返回，本任务返回的是新任务的pid,新任务返回0。Fork速度非常快，因为采用了写时复制。Fork只能产生本任务的镜像。</td>
+</tr>
+<tr>
+<td>exec</td>
+<td style="text-align:left">使用新的可执行映像覆盖当前可执行映像</td>
+<td style="text-align:left">Fork+exec启动别的新任务。</td>
+</tr>
+<tr>
+<td>Clone</td>
+<td style="text-align:left">创建子进程并从指定位置开始执行</td>
+<td style="text-align:left">产生新的线程使用clone。从指定的位置开始执行，并且（可选）共享当前的内存空间和文件等。如此就可以在实际效果上产生一个线程。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h1><p>同步：为了避免多个线程同时读写同一个数据而产生不可预料的结果，我们需要将各个线程对同一个数据的访问同步。所谓的同步，既是指在一个线程访问数据未结束的时候，其他线程不得对同一个数据进行访问。如此，对数据的访问被原子化了。<br>同步的方式：</p>
+<ol>
+<li>锁、</li>
+<li>二元信号量、（多元）信号量（对于允许多个线程并发访问的资源，它是一个很好的选择；一个初始值为n的信号量允许N个线程并发访问。）</li>
+<li>互斥量：和二元信号量很类似，资源进同时只能被一个线程访问。不同的是，信号量在整个系统可以被任意线程获取并释放。而互斥量则要求那个线程获取了互斥量，那个线程就要负责释放这个锁。</li>
+<li>临界区：是比互斥量更加严格的同步手段。把临界区的锁获取称为进入临界区，释放称为离开临界区。临界区和互斥量与信号量的区别在于，互斥量和信号量在系统的任何进程里都是可见的，也就是说，一个进程创建了一个互斥量或者信号量，另一个进程试图获取该锁是合法的。然而，临界区的作用范围仅限于本进程，其他进程无法获取该锁。除此之外，临界区胡互斥量具有相同的性质。</li>
+<li>读写锁：适用于读频繁写少的情况。对于一段数据，多个线程同时读取总是没有问题的，写时必须上锁。</li>
+<li>条件变量：作用类似一个栅栏。线程有两种操作，等待与唤醒。使用条件变量可以让许多线程一起等待某个事件的发生，当时间发生时，条件变量被唤醒，所有的线程可以一起恢复执行。</li>
+</ol>
+<h1 id="可重入与线程安全"><a href="#可重入与线程安全" class="headerlink" title="可重入与线程安全"></a>可重入与线程安全</h1><p>一个函数要被重入只有两种情况：一是多个线程同时执行这个函数；二是函数自身调用自身。一个函数被重入表示这个函数没有被执行完成，由于外部因素或者内部调用，又一次进入函数执行。一个函数可重入，表明函数重入后不会产生任何不良的后果。一个函数要成为可重入的，必须具有</p>
+<p>如下几个特点：</p>
+<ol>
+<li>不使用任何（局部）静态或全局的非const变量。</li>
+<li>不返回任何（局部）静态或者全局的非const变量的指针。</li>
+<li>仅依赖于调用方提供的参数。</li>
+<li>不依赖任何单个资源的锁。</li>
+<li>不调用任何可重入的函数。</li>
+</ol>
+<p>可重入是并发的强力保障，一个可重入的函数可以在多线程环境下放心使用。</p>
+<h2 id="过度优化"><a href="#过度优化" class="headerlink" title="过度优化"></a>过度优化</h2><p>Volatile关键字:一是阻止编译器为了提高速度将一个变量缓存到寄存器中而不写回；二是阻止编译器调整volatile变量的指令顺序。<br>Barrier：因为即使volatile可以阻止编译器调整顺序，也无法阻止CPU动态调度换序。现在并不存在可移植的阻止换序的方法。通常情况下是通过调用CPU提供的一条指令，这条指令被称为barrier。它可以阻止cpu将该指令之前的指令交换到它之后，反之亦然。Barrier指令的作用类似于一个拦水坝，阻止换序穿透这个大坝。</p>
+<h1 id="三种线程模型"><a href="#三种线程模型" class="headerlink" title="三种线程模型"></a>三种线程模型</h1><p>Windows和linux，都是在内核里提供线程的支持。内核线程，这里的内核线程和linux内核里的kernel_thread并不是一回事，它和我们之前讨论的一样，由多个处理器或调度器来实现并发。然而用户实际使用的的线程不是内核线程，而是存在于用户态的用户线程。用户线程并不一定在操作系统内核内对应着同样数量的内核线程。<br>用户态多线程库的实现</p>
+<ol>
+<li>一对一模型：用户线程具有和内核线程一致的优点，线程之间的并发，是真正的并发。一个线程阻塞，其他线程不会受到影响。一对一模型可以让多线程程序在多处理器的系统上有跟好的体现。一般直接使用API或系统调用创建的线程均为一对一的线程。</li>
+</ol>
+<blockquote>
+<p>缺点：一是由于许多操作系统限制了内核线程的数量，因此一对一线程会让用户的线程数量受到限制。二是许多操作系统内核线程调度时，上下文切换开销大，导致用户线程的执行效率下降。</p>
+</blockquote>
+<ol>
+<li>多对一模型：线程间的切换由用户态的代码来进行，线程切换的速度要快许多，但是一个用户线程阻塞，那么所有线程都将无法执行，因此此时内核里的线程也随之阻塞了。多对一模型的好处就是高效的上下文切换和几乎无限制的线程数量。</li>
+<li>多对多模型：一个用户线程阻塞并不会使得所有用户线程阻塞，因为此时还有别的线程可以被调度来执行。另外，多对多模型对用户线程的数量没有什么限制，在多处理器上，线程也能得到一定性能的提升。</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://onaple.duoshuo.com/2017/03/05/linux-基础常识/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="onaple">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="onaple‘s Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="onaple‘s Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/05/linux-基础常识/" itemprop="url">
+                  linux 基础常识
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-05T18:18:13+08:00">
+                2017-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/05/linux-基础常识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/05/linux-基础常识/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><ol>
+<li>Linux可划分为：linux内核、GNU工具、图形化桌面环境、应用软件。</li>
+<li>内核主要负责：系统内存管理、软件程序管理、硬件设备管理、文件系统管理。</li>
+<li>交换空间：内核通过硬盘上的存储空间来实现虚拟内存的这块区域。</li>
+</ol>
+<h1 id="linux内核"><a href="#linux内核" class="headerlink" title="linux内核"></a>linux内核</h1><h2 id="1-内存管理"><a href="#1-内存管理" class="headerlink" title="1.内存管理:"></a>1.内存管理:</h2><p>分段分页</p>
+<h2 id="2-软件程序管理："><a href="#2-软件程序管理：" class="headerlink" title="2.软件程序管理："></a>2.软件程序管理：</h2><p>内核控制着linux系统如何管理运行在系统上的所有进程。内核创建的第一个进程称为init进程，它是用来启动系统上所有其他进程的。当内核启动时，它会将init进程加载到虚拟内存中。内核在启动任何其他进程，都会在虚拟内存中给新进程分配一块专有的区域来存储该进程用到的数据和代码。</p>
+<p>一些linux发行版使用一个表来管理在系统开机时要启动的进程。在linux上这个表通常位于专门文件/etc/inittab中。Ubuntu则采用/etc/init.d目录，将开机时启动或者停止某个应用脚本放在这个目录下。这个脚本通过/etc/rcX.d目录下的入口启动，这里X代表运行级别。Linux操作系统的init系统采用了运行级别。运行级别决定了init进程运行/etc/inittab文件或/etc/rcX.d目录中定义好的某些特定的进程。Linux操作系统有5个启动运行级别。</p>
+<p>运行级别为一时，只启动基本的系统进程以及一个控制台终端进程，我们称之为单用户模式。单用户模式通常用来在系统有问题的时候进行紧急的文件系统维护。</p>
+<p>标准的启动运行级别是3，在这个运行级别上，大多数应用软件，比如网络支持程序都会启动。<br>运行级别5上系统启动图形化的X window系统，允许用户通过图形化桌面窗口登录系统。</p>
+<ol>
+<li><p>硬件设备管理：任何linux系统需要与之通讯的设备，都需要在内核代码中加入其驱动程序代码。驱动程序代码相当于应用程序和硬件设备的中间人，允许内核与设备之间交互数据。在linux内核中有两种方法用于插入设备驱动的代码，第一，编译进内核的设备驱动代码，第二，可插入内核的设备驱动代码。<br>Linux将硬件设备当成特殊的文件，称为设备文件。设备文件有：字符型设备文件、块设备文件、网络设备文件。</p>
+</li>
+<li><p>文件系统管理：linux内核支持不同类型的文件系统从硬盘中读取数据。</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ext</td>
+<td style="text-align:left">Linux 扩展文件系统，最早的linux文件系统</td>
+</tr>
+<tr>
+<td>Ext2</td>
+<td style="text-align:left">第二扩展文件系统，在ext的基础上提供了更多的功能。</td>
+</tr>
+<tr>
+<td>Ext3</td>
+<td style="text-align:left">第三扩展文件系统，支持日志功能。</td>
+</tr>
+<tr>
+<td>Ext4</td>
+<td style="text-align:left">第四扩展文件系统，支持高级日志功能。</td>
+</tr>
+<tr>
+<td>Hpfs</td>
+<td style="text-align:left">Os/2高性能文件系统。</td>
+</tr>
+<tr>
+<td>Nfs</td>
+<td style="text-align:left">网络文件系统</td>
+</tr>
+<tr>
+<td>Proc</td>
+<td style="text-align:left">访问系统信息</td>
+</tr>
+<tr>
+<td>ReiserFS</td>
+<td style="text-align:left">高级linux文件系统，能够提供更好的性能和硬盘恢复功能</td>
+</tr>
+</tbody>
+</table>
+<p>Linux内核采用虚拟文件系统（VFS）作为和每个文件系统交互的接口。这为linux内核同任何类型的文件系统通信提供了一个标准的接口。当每个文件系统都被挂载和使用的时候，VFS将信息都缓存在内存中。</p>
+<h1 id="GNU工具"><a href="#GNU工具" class="headerlink" title="GNU工具"></a>GNU工具</h1><p>GNU(GNU‘s Not Unix 的缩写) linux 内核和GNU工具的结合成为linux</p>
+<ol>
+<li>核心GNU工具：GNU项目的主旨在于为UNIX系统管理员设计出一套类似于UNIX的环境。这个目标促使该项目移植了很多常见的unix系统命令行工具。供linux系统使用的这组核心工具被称为coreutils(core utilities)软件包。它由三部分构成：处理文件的工具、操作文本的工具、管理进程的工具。</li>
+<li>Shell<br>GNU/Linux shell是一种特殊的交互式工具。它为用户提供了启动程序、管理文件系统中的文件以及运行在linux系统上的进程的途径。Shell的核心是命令提示符。命令提示符是设立负责交互的部分。它允许你输入文本命令，然后解释命令，并在内核中运行。<br>  Shell包含一组内部命令，它也允许你输入程序的名称，将程序名称传递给内核以启动它。<br>  所有linux发行版本默认的shell都是bash shell。Bash shell 由GNU项目开发，被当作标准的Unix shell(bourne shell以创建者命名)的替代品。Bash shell 的名字就是针对bourne shell 的拼写玩的一个文字游戏，称为bourne again shell。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>shell</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ash</td>
+<td style="text-align:left">一个运行在内存受限环境中简单的轻量级的shell，但和bash shell 完全兼容</td>
+</tr>
+<tr>
+<td>Korn</td>
+<td style="text-align:left">一种与bourne shell 兼容的编程shell，但支持一些高级编程特性：关联数组和浮点运算</td>
+</tr>
+<tr>
+<td>Tcsh</td>
+<td style="text-align:left">一种将C语言中的一些元素引入shell脚本中的shell。</td>
+</tr>
+<tr>
+<td>Zsh</td>
+<td style="text-align:left">一种结合了bash tcsh korn 的特性，同时提供了高级编程特性，共享历史文件和主题的高级shell。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="linux桌面环境"><a href="#linux桌面环境" class="headerlink" title="linux桌面环境"></a>linux桌面环境</h1><ol>
+<li>x window系统:它是直接和PC上的显示器以及显卡打交道的底层程序。它控制这linux程序如何在电脑上显示漂亮的窗口和图形。</li>
+<li>KDE(K Desktop Enivironment): 它允许你把应用程序图标和文件图标放置在桌面上。单击应用程序图标，linux就会运行该应用程序。</li>
+<li>GNOME（the GNU Network Object Model Environment, GNU网络对象模型环境），用的最多是Red Hat Linux.</li>
+<li>Unity桌面：ubuntu的桌面环境。目标为工作站、平板电脑以及移动设备提供一致的桌面体验。</li>
+</ol>
+<h1 id="Linux发行版通常分为三类："><a href="#Linux发行版通常分为三类：" class="headerlink" title="Linux发行版通常分为三类："></a>Linux发行版通常分为三类：</h1><ol>
+<li>完整的核心linux发行版</li>
+<li>特定用途的发行版</li>
+<li>LiveCD测试发行版</li>
+</ol>
+<h2 id="核心linux发行版"><a href="#核心linux发行版" class="headerlink" title="核心linux发行版"></a>核心linux发行版</h2><p>含有内核、一个多个图形化桌面环境以编译好的几乎所有能见到的linux应用。它提供了一站式完整的安装。比较流行的版本有</p>
+<table>
+<thead>
+<tr>
+<th>发行版</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Debian</td>
+<td style="text-align:left">在linux专家和商用linux产品中流行的发行版。</td>
+</tr>
+<tr>
+<td>OpenSUSE</td>
+<td style="text-align:left">用于商用和家用的发行版</td>
+</tr>
+<tr>
+<td>Slackware</td>
+<td style="text-align:left">最早的linux发行版的一员，在linux极客中比较流行。</td>
+</tr>
+<tr>
+<td>Red Hat</td>
+<td style="text-align:left">主要用于Internet服务器的商业发行版</td>
+</tr>
+<tr>
+<td>Fedora</td>
+<td style="text-align:left">从RedHat分离出的家用发行版</td>
+</tr>
+<tr>
+<td>Gentoo</td>
+<td style="text-align:left">为高级linux用户设计的发行版，仅包含Linux源码。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="特殊用途的linux发行版："><a href="#特殊用途的linux发行版：" class="headerlink" title="特殊用途的linux发行版："></a>特殊用途的linux发行版：</h2><p>他们通常基于某个主流发行版，但仅包含主流发行版的一小部分用于某种特定用途的应用程序。定制化发行版还尝试通过自动检测和自动配置常见的硬件来帮助新手安装linux。</p>
+<table>
+<thead>
+<tr>
+<th>发行版</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Centos</td>
+<td style="text-align:left">基于Red Hat企业版linux源代码构建的免费发行版</td>
+</tr>
+<tr>
+<td>Ubuntu</td>
+<td style="text-align:left">用于学校和家庭的免费发行版</td>
+</tr>
+<tr>
+<td>PClinuxOS</td>
+<td style="text-align:left">用于家庭和办公</td>
+</tr>
+<tr>
+<td>Mint</td>
+<td style="text-align:left">用于家庭娱乐</td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://onaple.duoshuo.com/2017/03/05/linux-杂记/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="onaple">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="onaple‘s Blog">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="onaple‘s Blog" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/05/linux-杂记/" itemprop="url">
+                  linux 进程与线程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-05T18:00:46+08:00">
+                2017-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/05/linux-杂记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/05/linux-杂记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="什么是进程？"><a href="#什么是进程？" class="headerlink" title="什么是进程？"></a>什么是进程？</h1><ol>
+<li>进程是资源分配和和独立运行的单位；</li>
+<li>进程是操作系统中可执行程序的一次执行，换句话说进程就是拥有资源（cpu,内存，磁盘，进程ID，文件描述符，虚拟地址空间，端口号等）的程序；它是动态的；</li>
+<li>一个进程是由程序控制块（pcb也就是task_struct结构体）,代码和数据组成；其中进程控制块是描述进程的资源和运行状态等；它有内核来管理；</li>
+<li>在linux中可以通过ps，pstree来查看当前系统中的进程；</li>
+</ol>
+<h1 id="什么是线程？"><a href="#什么是线程？" class="headerlink" title="什么是线程？"></a>什么是线程？</h1><ol>
+<li>线程属于轻量级进程，一个进程可以拥有多个线程；linux下线程就是轻量级进程，所以线程的概念和进程是大同小异的。只不过是共享了大部分资源的进程罢了。</li>
+<li>线程是进程的一个执行流，是CPU调度和分派的基本单位，它是比进程更小的能独立运行的基本单位。线程是进程中的最小调度单位；</li>
+<li>用户线程指的是完全建立在用户空间的线程库，用户线程的建立，同步，销毁，调度完全在用户空间完成，不需要内核的帮助。因此这种线程的操作是极其快速的且低消耗的。</li>
+<li>用户态线程和内核态线程；主要的区分就是“谁来管理”线程，用户态是用户管理，内核态是内核管理（但肯定要提供一些API，例如创建）。</li>
+<li>线程的模型有哪些<ul>
+<li>n : 1 多个线程对应一个核心线程(进程); 线程的创建和销毁以及管理全部在用户层的线程库中实现，在内核层完全不知情，内核层看到的只是一个个进程。所以内核会以进程为单位调度任务运行。</li>
+<li>1：1    一个线程对应核心线程(进程); 在1:1模式下，线程的创建，调度，销毁全由内核完成，而其他操作则由线程库完成。</li>
+<li>m ：n ： 结合上面两种方式，如某些进程一一对应核内线程，其他线程完全在用户态实现。</li>
+</ul>
+</li>
+</ol>
+<h1 id="linux是如何管理进程的？"><a href="#linux是如何管理进程的？" class="headerlink" title="linux是如何管理进程的？"></a>linux是如何管理进程的？</h1><ol>
+<li>每个进程在linux内核拥有一个task_struct结构体（进程控制块的具体定义），里面包含了进程几乎所有的信息。在linux下，所谓的进程管理，就是反复操纵task_struct结构体的过程一点也不为过。</li>
+<li>操作系统对进程的所有管理都是围绕task_struct结构体为中心构建的。</li>
+</ol>
+<blockquote>
+<p>例如，给某个进程发送kill信息，操作系统就会根据task_struct结构体中的信息释放进程所占用的内存，信号量，打开文件相关的资源等等，然后当进程被切换出去时释放task_struct结构体，至此，系统再没有保存该进程的任意一点信息，标志着进程的死亡。</p>
+<p>再例如，进程的调度，由于每个进程都有其自己的上下文环境，或者说是当前系统状态的总和。被切换出去进程的这种系统状态需要保存到task_struct结构体中，以便下次恢复。而被切换进来的进程的上下文环境从哪里来呢？显而易见，在这个被调度进来的进程在真正运行之前，调度程序会从该进程的task_struct结构体中找到之前保存的上下文环境，然后将系统恢复到之前保存的状态，被调度进来的程序才真正开始运行。</p>
+</blockquote>
+<h1 id="进程的创建过程："><a href="#进程的创建过程：" class="headerlink" title="进程的创建过程："></a>进程的创建过程：</h1><ol>
+<li>操作系统给新进程分配一个全局唯一的pid号;</li>
+<li>并在内核空间中创建和分配诸如task_struct结构体，kernel堆栈等必要的数据结构和物理资源。</li>
+<li>然后复制父进程的与信号有关，与文件系统有关的运行环境。最后还会给task_struct结构体某些变量赋值，将来使用这些变量来将新进程运行的某些环境（如kernel栈的起始地址，EAX的初值等）设置为子进程自己独有的运行环境。并加入运行队列中，之后就是调度程序的事了。</li>
+<li>这个过程中涉及到了写时拷贝技术。在Linux程序中，fork（）会产生一个和父进程完全相同的子进程，但子进程在此后多会exec系统调用，出于效率考虑，linux中引入了“写时复制“技术，也就是只有进程空间的各段的内容要发生变化时，才会将父进程的内容复制一份给子进程。</li>
+</ol>
+<h1 id="写时拷贝技术"><a href="#写时拷贝技术" class="headerlink" title="写时拷贝技术:"></a>写时拷贝技术:</h1><blockquote>
+<p><a href="http://blog.sina.cn/dpool/blog/s/blog_96757e4b01011b1n.html?vt=4" target="_blank" rel="external">http://blog.sina.cn/dpool/blog/s/blog_96757e4b01011b1n.html?vt=4</a> </p>
+</blockquote>
+<p>在Linux程序中，fork（）会产生一个和父进程完全相同的子进程，但子进程在此后多会exec系统调用，出于效率考虑，linux中引入了“写时复制“技术，也就是只有进程空间的各段的内容要发生变化时，才会将父进程的内容复制一份给子进程。在fork之后exec之前两个进程用的是相同的物理空间（内存区），子进程的代码段、数据段、堆栈都是指向父进程的物理空间，也就是说，两者的虚拟空间不同，但其对应的物理空间是同一个。当子进程中有更改相应段的行为发生时，再为子进程相应的段分配物理空间，如果不是因为exec，内核会给子进程的数据段、堆栈段分配相应的物理空间（至此两者有各自的进程空间，互不影响），而代码段继续共享父进程的物理空间（两者的代码完全相同）。而如果是因为exec，由于两者执行的代码不同，子进程的代码段也会分配单独的物理空间。</p>
+<p>这就是分配内存的拖延战术，直到不得不做。操作系统中与此类似思想的还有页高速缓存器（page cache）。也就是，当有程序试图将数据写入文件的时候，linux操作系统并不会马上将数据写入disk中，而是将它们临时放在memory的一块区域。这块区域就叫做page cache。只有在关闭文件或者关机时，才有内核线程将page cache中的数据刷到磁盘中。这也就是非正常退出时，数据会损坏的原因。</p>
+<h1 id="在Linux中主要提供了fork、vfork、clone三个进程创建方法。"><a href="#在Linux中主要提供了fork、vfork、clone三个进程创建方法。" class="headerlink" title="在Linux中主要提供了fork、vfork、clone三个进程创建方法。"></a>在Linux中主要提供了fork、vfork、clone三个进程创建方法。</h1><blockquote>
+<p>以下总结来源:<a href="http://www.360doc.com/content/14/1231/11/14530056_437075775.shtml" target="_blank" rel="external">http://www.360doc.com/content/14/1231/11/14530056_437075775.shtml</a> </p>
+</blockquote>
+<p>在linux源码中这三个调用的执行过程是执行fork(),vfork(),clone()时，通过一个系统调用表映射到sys_fork(),sys_vfork(),sys_clone(),再在这三个函数中去调用do_fork()去做具体的创建进程工作。</p>
+<ol>
+<li>fork创建一个进程时，子进程只是完全复制父进程的资源，复制出来的子进程有自己的task_struct结构和pid,但却复制父进程其它所有的资源。这样看来，fork是一个开销十分大的系统调用，这些开销并不是所有的情况下都是必须的，比如某进程fork出一个子进程后，其子进程仅仅是为了调用exec执行另一个可执行文件，那么在fork过程中对于虚存空间的复制将是一个多余的过程。但由于现在Linux中是采取了copy-on-write(COW写时复制)技术，为了降低开销，fork最初并不会真的产生两个不同的拷贝，因为在那个时候，大量的数据其实完全是一样的。写时复制是在推迟真正的数据拷贝。所以有了写时复制后呢，vfork其实现意义就不大了。</li>
+<li>vfork系统调用不同于fork，用vfork创建的子进程与父进程共享地址空间，也就是说子进程完全运行在父进程的地址空间上，如果这时子进程修改了某个变量，这将影响到父进程。但此处有一点要注意的是用vfork()创建的子进程必须显示调用exit()来结束，否则子进程将不能结束，而fork()则不存在这个情况。用 vfork创建子进程后，父进程会被阻塞直到子进程调用exec(exec，将一个新的可执行文件载入到地址空间并执行之。)或exit。vfork的好处是在子进程被创建后往往仅仅是为了调用exec执行另一个程序，因为它就不会对父进程的地址空间有任何引用，所以对地址空间的复制是多余的 ，因此通过vfork共享内存可以减少不必要的开销。</li>
+<li>clone :系统调用fork()和vfork()是无参数的，而clone()则带有参数。fork()是全部复制，vfork()是共享内存，而clone() 是则可以将父进程资源有选择地复制给子进程，而没有复制的数据结构则通过指针的复制让子进程共享，具体要复制哪些资源给子进程，由参数列表中的 clone_flags来决定。另外，clone()返回的是子进程的pid。<br>所以，这个就和上面说的轻量级进程联系起来，也可以这样说，linux通过clone调用生成线程。</li>
+</ol>
+<h1 id="fork，vfork，clone的区别"><a href="#fork，vfork，clone的区别" class="headerlink" title="fork，vfork，clone的区别"></a>fork，vfork，clone的区别</h1><ol>
+<li><p>fork出来的子进程是父进程的一个拷贝，即，子进程从父进程得到了数据段和堆栈段的拷贝，这些需要分配新的内存；而对于只读的代码段，通常使用共享内存的方式访问；而vfork则是子进程与父进程共享内存空间, 子进程对虚拟地址空间任何数据的修改同样为父进程所见；clone则由用户通过参clone_flags 的设置来决定哪些资源共享，哪些资源拷贝。 </p>
+</li>
+<li><p>fork不对父子进程的执行次序进行任何限制，fork返回后，子进程和父进程都从调用fork函数的下一条语句开始行，但父子进程运行顺序是不定的，它取决于内核的调度算法；而在vfork调用中，子进程先运行，父进程挂起，直到子进程调用了exec或exit之后，父子进程的执行次序才不再有限制；clone中由标志CLONE_VFORK来决定子进程在执行时父进程是阻塞还是运行，若没有设置该标志，则父子进程同时运行，设置了该标志，则父进程挂起，直到子进程结束为止。<br>他们成功执行时，父进程中返回子进程的进程号，在子进程中返回0。</p>
+</li>
+</ol>
+<h1 id="进程的调度"><a href="#进程的调度" class="headerlink" title="进程的调度"></a>进程的调度</h1><p>主要结构就是运行队列(双向循环链表)。为什么会有运行队列的存在呢?<br>当Linux内核要寻找一个新的进程在CPU上运行时，必须只考虑处于可运行状态的进程，（即在TASK_RUNNING状态的进程），因为扫描整个进程链表是相当低效的，所以引入了可运行状态进程的双向循环链表，也叫运行队列（runqueue）。运行队列容纳了系统中所有可以运行的进程，它是一个双向循环队列。</p>
+<p>也就是说，为了实现进程的调度，内核维护了一个叫做运行队列的数据结构。在这个数据结构中，active，expired，arrays是主要的三个结构。目前，咱们几个了解这三个就足够了。arrays也就是一个拥有两个成员的数组，每个数组有140个双向链表（也就是说，所有的就绪进程，按照时间片是否用完分成两个部分），对应了0~139 的140个优先级。active和expired分别指向arrays的两个成员。进程调度时，从active指针选择下一个要运行的程序。active中时间片用完的进程会被移动到expired队列，并且时间片会被重新计算，若active队列再无成员，则两个指针指向互换。</p>
+<p>linux进程主要分为 实时进程（例如键盘中输入字母或者鼠标点击之类的） 和 交互式进程与批处理进程（例如word程序，你总是写一会停一会）。内核不会动态调整前者的优先级，如需调整，则需要调用特殊的系统调用。而且，前者的优先级别最高。只有没有实时进程的时候，交互式或者批处理才会被调度执行。而后者的优先级会被内核动态调整。</p>
+<h1 id="进程有哪些调度策略？"><a href="#进程有哪些调度策略？" class="headerlink" title="进程有哪些调度策略？"></a>进程有哪些调度策略？</h1><p>这时候你分开说。对于实时进程，一般采用的是FIFO或者RR（轮询）机制。而对于交互式或者批处理进程，则采用动态调整优先级加运行队列机制来执行调度。这里有个大原则，如果有实时进程，那么交互式或者批处理则不会被执行。这个从进程优先级就可以看出来：实时（0~99），交互式批处理（100~139）。这时，你还可以举个例子。比如，你正在复制100文件，文件是一个一个被复制的，当复制到第50个的时候，你点了一下停止符号，它不会说是继续第51个文件的复制，而是直接停止。说明你鼠标的点击被插入到第51个文件之前了。所以实时进程永远比后者优先级高。</p>
+<h1 id="进程会在什么时候被调度"><a href="#进程会在什么时候被调度" class="headerlink" title="进程会在什么时候被调度?"></a>进程会在什么时候被调度?</h1><p>调度一般在进程退出内核态时，因为这时进程已经释放了可能导致内核死锁的资源。除了时间片用完触发调度，内核线程会在执行一些比较费时的任务时，自己调用调度函数，使其他进程有机会执行。</p>
+<p>首先进程调度不应该产生内核死锁之类的问题。如果进程在内核态，则它可能会占有产生死锁的资源（比如，进程想要操纵硬件必须使用系统调用。想想这样一种情况：用户想要使用打印机这种独占资源，内核线程，也就是代表用户进程在内核状态执行的那个线程，它一定改变了代表打印机的结构的某个标志位，或者持有打印机结构体内的自旋锁，互斥锁之类的资源，标志着打印机正在被使用，本来打算在返回用户态时释放这种互斥锁资源，但调度函数来了，我不管，我就要让你现在退出。然后该进程带着互斥锁退出。当下一个进程进来，也要使用打印机，这时，该进程向内核申请打印机，而内核却发现打印机正在被使用，所以内核等待打印机退出，而持有互斥锁的进程已经被内核踢出cpu了，谈何释放？所以这时，所有的进程都在等，被调度进来进程陷入内核出不来了,整条逻辑陷入了无限循环，如果是单核，那么死锁便产生了）。</p>
+<h1 id="关于僵尸进程"><a href="#关于僵尸进程" class="headerlink" title="关于僵尸进程"></a>关于僵尸进程</h1><p>僵尸进程指的是那些虽然已经终止的进程，但仍然保留一些信息，等待其父进程为其收尸。</p>
+<ol>
+<li><p>生的原因：<br>父进程调用fork创建子进程后，子进程运行直至其终止，它立即从内存中移除，但进程描述符仍然保留在内存中（进程描述符占有极少的内存空间）。子进程的状态变成EXIT_ZOMBIE，并且向父进程发送SIGCHLD 信号，父进程此时应该调用 wait() 系 统调用来获取子进程的退出状态以及其它的信息。在 wait 调用之后，僵尸进程就完全从内存中移除。因此一个僵尸存在于其终止到父进程调用 wait 等函数这个时间的间隙，一般很快就消失，但如果编程不合理，父进程从不调用 wait 等系统调用来收集僵尸进程，那么这些进程会一直存在内存中。比如父进程死了，或者父进程忽略了SIGCHLD信号，或者父进程对SIGCHLD信号定义的信号处理函数有误。</p>
+</li>
+<li><p>如何避免：不能使用 kill 后接 SIGKILL 信号这样的命令像杀死普通进程一样杀死僵尸进程，因为僵尸进程是已经死掉的进程，它不能再接收任何信号。事实上，如果系统中僵尸进程并不多的话，我们也无需去消除它们，少数的僵尸进程并不会对系统的性能有什么影响。</p>
+</li>
+</ol>
+<p>那么在编程时，如果能避免系统中大量产生僵尸进程呢？根据上面描述的，子进程在终止时会向父进程发 SIGCHLD 信号，Linux 默认是忽略该信号的，我们可以显示安装该信号，在信号处理函数中调用 wait 等函数来为其收尸，这样就能避免僵尸进程长期存在于系统中了。<br>以上都是复制下面这个链接的，</p>
+<blockquote>
+<p><a href="http://www.cnblogs.com/hazir/p/zombie_process.html" target="_blank" rel="external">http://www.cnblogs.com/hazir/p/zombie_process.html</a></p>
+</blockquote>
+<ol>
+<li><p>危害：</p>
+<ul>
+<li>僵尸进程的pid不会释放，意味着如果有海量的僵尸进程，则会占满进程表项，是的后续进程无法执行fork（）</li>
+<li>内核栈无法释放，这个资源是很珍贵的。根本原因在于，task_stauct结构体没有释放。</li>
+</ul>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://onaple.duoshuo.com/2017/03/05/c-类的四大函数/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1403,7 +2205,7 @@ class 类名
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1412,7 +2214,7 @@ class 类名
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1421,7 +2223,7 @@ class 类名
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
