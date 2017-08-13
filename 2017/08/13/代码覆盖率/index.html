@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="onaple‘s Blog">
 <meta property="og:description" content="JaCoCoJaCoCo简述JaCoCo是一个开源的覆盖率工具(官网地址：http://www.eclemma.org/JaCoCo/)，它针对的开发语言是java，其使用方法很灵活，可以嵌入到Ant、Maven中；可以作为Eclipse插件，可以使用其JavaAgent技术监控Java程序等等。很多第三方的工具提供了对JaCoCo的集成，如sonar、Jenkins等。 使用姿势 在Bulid">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-13T10:15:22.000Z">
+<meta property="og:updated_time" content="2017-08-13T10:21:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码覆盖率">
 <meta name="twitter:description" content="JaCoCoJaCoCo简述JaCoCo是一个开源的覆盖率工具(官网地址：http://www.eclemma.org/JaCoCo/)，它针对的开发语言是java，其使用方法很灵活，可以嵌入到Ant、Maven中；可以作为Eclipse插件，可以使用其JavaAgent技术监控Java程序等等。很多第三方的工具提供了对JaCoCo的集成，如sonar、Jenkins等。 使用姿势 在Bulid">
@@ -381,17 +381,6 @@
 
                 
                 
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA/测试/" itemprop="url" rel="index">
-                    <span itemprop="name">测试</span>
-                  </a>
-                </span>
-
-                
-                
               
             </span>
           
@@ -448,8 +437,7 @@
 <li>项目运行报错，类重复加载。<br>产生的原因：test类加载配置文件不同统一，spring配置文件加载了两次造成。<br>另一次是，redis与mysql更换导致运行，运行失败、速度过慢，覆盖率大幅度下降。</li>
 <li><a href="https://stackoverflow.com/questions/24115142/intellij-error-when-running-unit-test-could-not-find-or-load-main-class-suref" target="_blank" rel="external">${surefireArgLine}标红解决方案</a></li>
 </ol>
-<h3 id="JaCoCo参考文档"><a href="#JaCoCo参考文档" class="headerlink" title="JaCoCo参考文档"></a>JaCoCo参考文档</h3><p><a href="http://wiki.ele.to:8090/pages/viewpage.action?pageId=43711325" target="_blank" rel="external">公司jacoco接入文档</a></p>
-<p><a href="http://blog.csdn.net/gc_cg/article/details/53172053" target="_blank" rel="external">参考文档1:jacoco 原理篇</a></p>
+<h3 id="JaCoCo参考文档"><a href="#JaCoCo参考文档" class="headerlink" title="JaCoCo参考文档"></a>JaCoCo参考文档</h3><p><a href="http://blog.csdn.net/gc_cg/article/details/53172053" target="_blank" rel="external">参考文档1:jacoco 原理篇</a></p>
 <p><a href="http://blog.csdn.net/wangmuming/article/details/28868833" target="_blank" rel="external">参考文档2: Jacoco覆盖率工具使用之maven篇</a></p>
 <h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><h3 id="单元测试的概述"><a href="#单元测试的概述" class="headerlink" title="单元测试的概述"></a>单元测试的概述</h3><p>所谓单元测试，是指对软件设计的最小单位，进行正确性检验的测试工作。而检验的方法，一般来说是由开发人员编写一小段测试代码，根据被测目标代码的应用场景，设计拥有合理覆盖度的输入条件，调用执行目标代码，然后判断输出结果是否与预期一致。被测试目标代码一般应具体到类的方法层面上。</p>
 <p>总之，单元测试是一个方法层级上的测试，单元测试也是最细粒度的测试，用于测试一个类的每一个方法都已经满足了方法的功能需求。</p>
