@@ -87,34 +87,18 @@
 
 
 
-<meta name="description" content="编译过程简述编译：预处理主要处理源文件中以“#”开头的预编译指令，例如#include，#define，#ifdef，#pragma等。
-编译通过词法分析（生成一系列记号），语法分析（根据一系列记号生成语法树），语义分析（对语法树每一部分做有效性检查），优化后生成汇编代码。
-汇编产生机器指令。
-ELF文件（这里指.o文件）中包含什么？
-
-文件头
-段表：包含了段的基本属性，例如每个段的段名，段的长度">
+<meta name="description" content="编译过程简述编译：预处理主要处理源文件中以“#”开头的预编译指令，例如#include，#define，#ifdef，#pragma等。 编译通过词法分析（生成一系列记号），语法分析（根据一系列记号生成语法树），语义分析（对语法树每一部分做有效性检查），优化后生成汇编代码。 汇编产生机器指令。 ELF文件（这里指.o文件）中包含什么？  文件头 段表：包含了段的基本属性，例如每个段的段名，段的长度">
+<meta name="keywords" content="linux,x86,编译原理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="x86系统编译原理">
 <meta property="og:url" content="http://onaple.duoshuo.com/2017/03/05/x86系统编译原理/index.html">
 <meta property="og:site_name" content="onaple‘s Blog">
-<meta property="og:description" content="编译过程简述编译：预处理主要处理源文件中以“#”开头的预编译指令，例如#include，#define，#ifdef，#pragma等。
-编译通过词法分析（生成一系列记号），语法分析（根据一系列记号生成语法树），语义分析（对语法树每一部分做有效性检查），优化后生成汇编代码。
-汇编产生机器指令。
-ELF文件（这里指.o文件）中包含什么？
-
-文件头
-段表：包含了段的基本属性，例如每个段的段名，段的长度">
+<meta property="og:description" content="编译过程简述编译：预处理主要处理源文件中以“#”开头的预编译指令，例如#include，#define，#ifdef，#pragma等。 编译通过词法分析（生成一系列记号），语法分析（根据一系列记号生成语法树），语义分析（对语法树每一部分做有效性检查），优化后生成汇编代码。 汇编产生机器指令。 ELF文件（这里指.o文件）中包含什么？  文件头 段表：包含了段的基本属性，例如每个段的段名，段的长度">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-03-05T12:18:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="x86系统编译原理">
-<meta name="twitter:description" content="编译过程简述编译：预处理主要处理源文件中以“#”开头的预编译指令，例如#include，#define，#ifdef，#pragma等。
-编译通过词法分析（生成一系列记号），语法分析（根据一系列记号生成语法树），语义分析（对语法树每一部分做有效性检查），优化后生成汇编代码。
-汇编产生机器指令。
-ELF文件（这里指.o文件）中包含什么？
-
-文件头
-段表：包含了段的基本属性，例如每个段的段名，段的长度">
+<meta name="twitter:description" content="编译过程简述编译：预处理主要处理源文件中以“#”开头的预编译指令，例如#include，#define，#ifdef，#pragma等。 编译通过词法分析（生成一系列记号），语法分析（根据一系列记号生成语法树），语义分析（对语法树每一部分做有效性检查），优化后生成汇编代码。 汇编产生机器指令。 ELF文件（这里指.o文件）中包含什么？  文件头 段表：包含了段的基本属性，例如每个段的段名，段的长度">
 
 
 
