@@ -1449,7 +1449,7 @@ linux内核1.内存管理:分段分页
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://onaple.duoshuo.com/2017/03/05/linux-内存管理/">
+  <link itemprop="mainEntityOfPage" href="http://onaple.duoshuo.com/2017/03/05/linux-文件系统/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="onaple">
@@ -1474,8 +1474,8 @@ linux内核1.内存管理:分段分页
             
               
                 
-                <a class="post-title-link" href="/2017/03/05/linux-内存管理/" itemprop="url">
-                  linux 内存管理
+                <a class="post-title-link" href="/2017/03/05/linux-文件系统/" itemprop="url">
+                  linux 文件系统
                 </a>
               
             
@@ -1532,8 +1532,8 @@ linux内核1.内存管理:分段分页
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/05/linux-内存管理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/05/linux-内存管理/" itemprop="commentCount"></span>
+                <a href="/2017/03/05/linux-文件系统/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/05/linux-文件系统/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1561,11 +1561,14 @@ linux内核1.内存管理:分段分页
       
         
           
-          CPU位数和操作系统位数的关系：操作系统的位数其实是说的CPU的位数。因为计算机的所有功能都是基于CPU的指令集，也就是说，操作系统的所有功能几乎都跟CPU指令集有关系，操作系统的所有功能都会被翻译成一组CPU指令集。64位CPU的指令集是64位的，要想使用64位的功能，那么操作系统也必须是64位的
+          文件系统概念：是操作系统的一部分，用来管理磁盘空间，向外提供操纵接口。比如fread，fwrite，fopen等系统调用就是文件系统提供的功能。
+作用：管理用户的逻辑文件，替用户保存逻辑文件到存储块的映射。并提供缓存机制，做到存取速度快，存储空间利用率高，数据安全性好。
+
+NFS（Network F
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/05/linux-内存管理/#more" rel="contents">
+            <a class="btn" href="/2017/03/05/linux-文件系统/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1770,7 +1773,7 @@ linux内核1.内存管理:分段分页
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://onaple.duoshuo.com/2017/03/05/linux-文件系统/">
+  <link itemprop="mainEntityOfPage" href="http://onaple.duoshuo.com/2017/03/05/linux-内存管理/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="onaple">
@@ -1795,8 +1798,8 @@ linux内核1.内存管理:分段分页
             
               
                 
-                <a class="post-title-link" href="/2017/03/05/linux-文件系统/" itemprop="url">
-                  linux 文件系统
+                <a class="post-title-link" href="/2017/03/05/linux-内存管理/" itemprop="url">
+                  linux 内存管理
                 </a>
               
             
@@ -1853,8 +1856,8 @@ linux内核1.内存管理:分段分页
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/05/linux-文件系统/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/05/linux-文件系统/" itemprop="commentCount"></span>
+                <a href="/2017/03/05/linux-内存管理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/05/linux-内存管理/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1882,14 +1885,11 @@ linux内核1.内存管理:分段分页
       
         
           
-          文件系统概念：是操作系统的一部分，用来管理磁盘空间，向外提供操纵接口。比如fread，fwrite，fopen等系统调用就是文件系统提供的功能。
-作用：管理用户的逻辑文件，替用户保存逻辑文件到存储块的映射。并提供缓存机制，做到存取速度快，存储空间利用率高，数据安全性好。
-
-NFS（Network F
+          CPU位数和操作系统位数的关系：操作系统的位数其实是说的CPU的位数。因为计算机的所有功能都是基于CPU的指令集，也就是说，操作系统的所有功能几乎都跟CPU指令集有关系，操作系统的所有功能都会被翻译成一组CPU指令集。64位CPU的指令集是64位的，要想使用64位的功能，那么操作系统也必须是64位的
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/05/linux-文件系统/#more" rel="contents">
+            <a class="btn" href="/2017/03/05/linux-内存管理/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1979,7 +1979,7 @@ NFS（Network F
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1988,7 +1988,7 @@ NFS（Network F
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
