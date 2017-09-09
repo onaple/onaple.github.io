@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="LINUX,文件系统," />
+  <meta name="keywords" content="git," />
 
 
 
@@ -87,24 +87,18 @@
 
 
 
-<meta name="description" content="文件系统概念：是操作系统的一部分，用来管理磁盘空间，向外提供操纵接口。比如fread，fwrite，fopen等系统调用就是文件系统提供的功能。 作用：管理用户的逻辑文件，替用户保存逻辑文件到存储块的映射。并提供缓存机制，做到存取速度快，存储空间利用率高，数据安全性好。  NFS（Network File System）即网络文件系统NTFS (New Technology File System">
-<meta name="keywords" content="LINUX,文件系统">
+<meta name="description" content="版本间的切换123456789git log --pretty=online 版本记录git reset -hard HEAD^ 会退上一个版本git reflog 记录每一次命令，通过commitID可以回退git reset --hard  commitID 回退到某个版本git log 可以查看提交历史确认commitID要重返未来，用git reflog 查看历史命令，确定版本。 三种回退">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux 文件系统">
-<meta property="og:url" content="http://onaple.duoshuo.com/2017/03/05/linux-文件系统/index.html">
+<meta property="og:title" content="git 常用命令">
+<meta property="og:url" content="http://onaple.duoshuo.com/2017/09/09/git-常用命令/index.html">
 <meta property="og:site_name" content="onaple‘s Blog">
-<meta property="og:description" content="文件系统概念：是操作系统的一部分，用来管理磁盘空间，向外提供操纵接口。比如fread，fwrite，fopen等系统调用就是文件系统提供的功能。 作用：管理用户的逻辑文件，替用户保存逻辑文件到存储块的映射。并提供缓存机制，做到存取速度快，存储空间利用率高，数据安全性好。  NFS（Network File System）即网络文件系统NTFS (New Technology File System">
+<meta property="og:description" content="版本间的切换123456789git log --pretty=online 版本记录git reset -hard HEAD^ 会退上一个版本git reflog 记录每一次命令，通过commitID可以回退git reset --hard  commitID 回退到某个版本git log 可以查看提交历史确认commitID要重返未来，用git reflog 查看历史命令，确定版本。 三种回退">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://onaple.duoshuo.com/2017/03/05/linux-文件系统/linux-文件系统/image1.png">
-<meta property="og:image" content="http://onaple.duoshuo.com/2017/03/05/linux-文件系统/linux-文件系统/图片2.png">
-<meta property="og:image" content="http://onaple.duoshuo.com/2017/03/05/linux-文件系统/linux-文件系统/图片4.png">
-<meta property="og:image" content="http://onaple.duoshuo.com/2017/03/05/linux-文件系统/linux-文件系统/图片5.png">
-<meta property="og:image" content="http://onaple.duoshuo.com/2017/03/05/linux-文件系统/linux-文件系统/图片6.png">
-<meta property="og:updated_time" content="2017-09-02T10:13:06.000Z">
+<meta property="og:updated_time" content="2017-09-09T02:55:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux 文件系统">
-<meta name="twitter:description" content="文件系统概念：是操作系统的一部分，用来管理磁盘空间，向外提供操纵接口。比如fread，fwrite，fopen等系统调用就是文件系统提供的功能。 作用：管理用户的逻辑文件，替用户保存逻辑文件到存储块的映射。并提供缓存机制，做到存取速度快，存储空间利用率高，数据安全性好。  NFS（Network File System）即网络文件系统NTFS (New Technology File System">
-<meta name="twitter:image" content="http://onaple.duoshuo.com/2017/03/05/linux-文件系统/linux-文件系统/image1.png">
+<meta name="twitter:title" content="git 常用命令">
+<meta name="twitter:description" content="版本间的切换123456789git log --pretty=online 版本记录git reset -hard HEAD^ 会退上一个版本git reflog 记录每一次命令，通过commitID可以回退git reset --hard  commitID 回退到某个版本git log 可以查看提交历史确认commitID要重返未来，用git reflog 查看历史命令，确定版本。 三种回退">
 
 
 
@@ -132,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://onaple.duoshuo.com/2017/03/05/linux-文件系统/"/>
+  <link rel="canonical" href="http://onaple.duoshuo.com/2017/09/09/git-常用命令/"/>
 
 
 
 
 
-  <title> linux 文件系统 | onaple‘s Blog </title>
+  <title> git 常用命令 | onaple‘s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -318,7 +312,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://onaple.duoshuo.com/2017/03/05/linux-文件系统/">
+  <link itemprop="mainEntityOfPage" href="http://onaple.duoshuo.com/2017/09/09/git-常用命令/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="onaple">
@@ -342,7 +336,7 @@
             
             
               
-                linux 文件系统
+                git 常用命令
               
             
           </h1>
@@ -357,8 +351,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-05T18:00:46+08:00">
-                2017-03-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-09T10:36:59+08:00">
+                2017-09-09
               </time>
             
 
@@ -380,8 +374,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LINUX/" itemprop="url" rel="index">
-                    <span itemprop="name">LINUX</span>
+                  <a href="/categories/GIT/" itemprop="url" rel="index">
+                    <span itemprop="name">GIT</span>
                   </a>
                 </span>
 
@@ -398,8 +392,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/05/linux-文件系统/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/05/linux-文件系统/" itemprop="commentCount"></span>
+                <a href="/2017/09/09/git-常用命令/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/09/09/git-常用命令/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -425,80 +419,20 @@
       
 
       
-        <h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><p>概念：是操作系统的一部分，用来管理磁盘空间，向外提供操纵接口。比如fread，fwrite，fopen等系统调用就是文件系统提供的功能。</p>
-<p>作用：管理用户的逻辑文件，替用户保存逻辑文件到存储块的映射。并提供缓存机制，做到存取速度快，存储空间利用率高，数据安全性好。</p>
-<blockquote>
-<p>NFS（Network File System）即网络文件系统<br>NTFS (New Technology File System)<br>FAT是文件配置表（英语：File Allocation Table，首字母缩略字：FAT）<br>EXT4是第四代扩展文件系统（英语：Fourth extended filesystem，缩写为 ext4）</p>
-</blockquote>
-<p>文件系统中存储的最小单位是块（Block）Ext2文件系统将整个分区划成若干个同样大小的块组（Block Group），如图1所示，每个块组都由以下部分组成：</p>
-<p><img src="linux-文件系统/image1.png" alt="磁盘分区和文件系统结构图"><br><img src="linux-文件系统/图片2.png" alt="图2"></p>
-<h2 id="1-Super-Block（超级块）"><a href="#1-Super-Block（超级块）" class="headerlink" title="1. Super Block（超级块）"></a>1. Super Block（超级块）</h2><p>描述整个分区的文件系统信息，例如块大小、文件系统版本号、上次mount的时间等等。超级块在每个块组的开头都有一份拷贝。</p>
-<p>先介绍几个结构体：</p>
-<h3 id="file结构体："><a href="#file结构体：" class="headerlink" title="file结构体："></a>file结构体：</h3><p>存在于task_struct的 文件描述符表 的每个元素指向的内存中。fd为文件描述符表的索引。文件描述符表  是个指针数组，每个元素指向一个file结构体。</p>
-<p>文件结构体代表一个打开的文件，系统中的每个打开的文件在内核空间都有一个关联的 struct file。它由内核在打开文件时创建，并传递给在文件上进行操作的任何函数。在文件的所有实例都关闭后，内核释放这个数据结构。并且一个文件即使是在一个进程中多次打开，也会存在多个file结构。（<a href="http://blog.sina.com.cn/s/blog_7943319e01018m3w.html）" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_7943319e01018m3w.html）</a></p>
-<p>为什么要设置file结构体？<br>    因为linux下，文件是共享的。意味着多个进程对这个文件的读写有着不同的偏移量。首先文件偏移量不能放在inode，因为多个进程可能会共享一个inode。所以只能创建一个中间结构struct file 来保存文件偏移量。即使是这样，父进程和子进程还是有这方面问题的矛盾。因为子进程会继承父进程打开的文件，也就是说，子进程的文件描述符表和父进程的文件描述符表指向的是同一组file结构（仅仅增加了file结构体中的引用计数）。所以，子进程对文件偏移量的操作必然会影响到父进程。所以，一般在父进程和子进程之间需要同步机制或者在父子进程中分别关闭不用的文件，以免互相影响。(详细见<a href="http://woshiniezhenhua.blog.163.com/blog/static/191376928201291344920408/" target="_blank" rel="external">http://woshiniezhenhua.blog.163.com/blog/static/191376928201291344920408/</a>      <a href="http://www.tuicool.com/articles/I3AZF3）" target="_blank" rel="external">http://www.tuicool.com/articles/I3AZF3）</a><br>几个比较重要的元素：</p>
-<ol>
-<li>f_flag：文件标志， O_RDONLY, O_NONBLOCK, 和 O_SYNC. 驱动应当检查O_NONBLOCK 标志来看是否是请求非阻塞操作。</li>
-<li>f_count：引用计数</li>
-<li>f_pos：文件偏移量</li>
-<li>f_dentry：关联到文件的目录入口( dentry )结构. 设备驱动编写者正常地不需要关心 dentry 结构, 除了作为 filp-&gt;f_dentry-&gt;d_inode 存取 inode 结构.</li>
-</ol>
-<p>说道这里，文件是怎么共享的？</p>
-<h3 id="静态共享和动态共享"><a href="#静态共享和动态共享" class="headerlink" title="静态共享和动态共享"></a>静态共享和动态共享</h3><p>静态共享分为硬链接和软链接。</p>
-<p>二者的区别是，硬链接修改文件目录项，把两个不同名的文件的inode指针指向同一个inode。<br>而软链接则是使用另外一个独立的文件，只不过文件内容是需要指向文件的路径名。然后使用某个系统调用，利用路径名打开指向的文件，实现共享。</p>
-<ul>
-<li>硬链接的优点是简单，但是不能跨越文件系统。</li>
-<li>软链接的优点是可以跨越文件系统，但是要占用额外的空间和inode，而且容易形成死链的情况。</li>
-<li>最重要的是，无论是硬链接还是软连接，都属于静态链接，他们最终映射到同一个inode，但是两个进程持有不同的file结构，也就是说，静态链接不能实现共享偏移量。<br>动态共享</li>
-</ul>
-<p>为什么会出现动态共享，是为了解决上面说的不能共享读写偏移量的问题。现实生活中，有两种需求。一种是需要共享读写指针，另一种是不需要共享。为了实现前者，linux系统提出了系统打开文件表的概念。<br>主要是将一些需要被共享的file结构体统一放在系统打开文件表中。如果两个进程希望共享文件读写指针，则使二者的文件描述符表指向系统打开文件表中的同一个file结构体。而如果不需要共享，则指向不同的系统打开文件表即可。</p>
-<p>dentry结构体，只需要知道其中有指向inode的指针即可</p>
-<p>open函数的执行过程（<a href="http://blog.chinaunix.net/uid-25968088-id-3426026.html）" target="_blank" rel="external">http://blog.chinaunix.net/uid-25968088-id-3426026.html）</a><br>（1）task_sruct中保存有该进程可以使用的但是未使用的文件描述符，先通过某个函数获取一个文件描述符。<br>（2）在task_struct的文件描述符表中文件描述符对应的位置初始化一个file指针，并分配一个全新的file结构体。<br>（3）利用传入的参数查找或者建立dentry，并绑定inode，至此，file结构的初始化到此为止。<br>（4）建立fd与file结构的关系，返回fd、<br>网络教程：</p>
-<ol>
-<li>找到一个本进程没有使用的文件描述符fd（int型）</li>
-<li>分配一个全新的struct file结构体</li>
-<li>根据传人的pathname查找或建立对应的dentry</li>
-<li>建立fd到这个struct file结构体的联系</li>
-</ol>
-<p>read函数的执行过程（<a href="http://blog.csdn.net/lwj103862095/article/details/38518069）" target="_blank" rel="external">http://blog.csdn.net/lwj103862095/article/details/38518069）</a></p>
-<p><img src="linux-文件系统/图片4.png" alt="图4"></p>
-<p>图1显示了 read 系统调用在核心空间中所要经历的层次模型。从图中看出：对于磁盘的一次读请求，首先经过虚拟文件系统层（vfs layer），其次是具体的文件系统层（例如 ext2），接下来是 cache 层（page cache 层）、通用块层（generic block layer）、IO 调度层（I/O scheduler layer）、块设备驱动层（block device driver layer），最后是物理块设备层（block device layer）</p>
-<ol>
-<li>虚拟文件系统层的作用：屏蔽下层具体文件系统操作的差异，为上层的操作提供一个统一的接口。正是因为有了这个层次，所以可以把设备抽象成文件，使得操作设备就像操作文件一样简单。</li>
-<li>在具体的文件系统层中，不同的文件系统（例如 ext2 和 NTFS）具体的操作过程也是不同的。每种文件系统定义了自己的操作集合。关于文件系统的更多内容，请参见参考资料。</li>
-<li>引入 cache 层的目的是为了提高 linux 操作系统对磁盘访问的性能。 Cache 层在内存中缓存了磁盘上的部分数据。当数据的请求到达时，如果在 cache 中存在该数据且是最新的，则直接将数据传递给用户程序，免除了对底层磁盘的操作，提高了性能。</li>
-<li>通用块层的主要工作是：接收上层发出的磁盘请求，并最终发出 IO 请求。该层隐藏了底层硬件块设备的特性，为块设备提供了一个通用的抽象视图。</li>
-<li>IO 调度层的功能：接收通用块层发出的 IO 请求，缓存请求并试图合并相邻的请求（如果这两个请求的数据在磁盘上是相邻的）。并根据设置好的调度算法，回调驱动层提供的请求处理函数，以处理具体的 IO 请求。</li>
-<li>驱动层中的驱动程序对应具体的物理块设备。它从上层中取出 IO 请求，并根据该 IO 请求中指定的信息，通过向具体块设备的设备控制器发送命令的方式，来操纵设备传输数据。</li>
-<li>设备层中都是具体的物理设备。定义了操作具体设备的规范。</li>
-</ol>
-<h3 id="相关的内核数据结构："><a href="#相关的内核数据结构：" class="headerlink" title="相关的内核数据结构："></a>相关的内核数据结构：</h3><ul>
-<li>Dentry ： 联系了文件名和文件的 i 节点  </li>
-<li>inode ： 文件 i 节点，保存文件标识、权限和内容等信息  </li>
-<li>file ： 保存文件的相关信息和各种操作文件的函数指针集合  </li>
-<li>file_operations ：操作文件的函数接口集合  </li>
-<li>address_space ：描述文件的 page cache 结构以及相关信息，并包含有操作 page cache 的函数指针集合  </li>
-<li>address_space_operations ：操作 page cache 的函数接口集合  </li>
-<li>bio ： IO 请求的描述  </li>
-</ul>
-<p><img src="linux-文件系统/图片5.png" alt="图5"></p>
-<p>图5显示了一个文件的 page cache 结构。文件被分割为一个个以 page 大小为单元的数据块,这些数据块（页）被组织成一个多叉树（称为 radix 树）。此树的层次可以从0层到6层，所支持的文件大小从0字节到16 T 个字节。树的根节点指针可以从和文件相关的 address_space 对象（该对象保存在和文件关联的 inode 对象中）中取得</p>
-<p>（1）产生系统调用，in0x80，根据中断号，在中断向量表中找到read函数的入口地址，将cpu执行权给read系统调用。<br>（2）read通过传入的fd，取出file结构体中的文件偏移量，并通过dentry找到inode结构。<br>（3）inode中存放着该文件对应的page cache的结构以及相关信息，并且有一组操纵page cache结构的函数指针。read在真正向底层发送读取信息之前，会先操纵page cache 来查看<br>其中有没有需要读取的页。如果有，有专门函数讲page chache 中的数据拷贝到用户空间，read调用链到此结束。如果没有，lock计算出的页，则向下层发送添页请求，当再次lock成功时，说明数据已经在page cache 中了，拷贝到用户空间，结束。</p>
-<h1 id="文件操作的一般步骤："><a href="#文件操作的一般步骤：" class="headerlink" title="文件操作的一般步骤："></a>文件操作的一般步骤：</h1><ol>
-<li>根据路径名找到对应的dentry结构，并绑定inode。</li>
-<li>根据dentry找到inode</li>
-<li>根据inode中的某个数组获得对应文件的信息存放在哪些数据块上。</li>
-<li>调用文件系统函数向更下一层发送命令，从而从磁盘读取数据。<h1 id="page-cache机制："><a href="#page-cache机制：" class="headerlink" title="page cache机制："></a>page cache机制：</h1> linux访问文件的方式分为直接IO和非直接IO两大类。其中，非直接IO就会用到page cache。上层程序写的数据先写到page cache，再有内核线程定期刷到磁盘。用户程序需要读的数据，先读到page cache，再从page cache拷贝到用户空间。</li>
-</ol>
-<h1 id="ext2文件系统"><a href="#ext2文件系统" class="headerlink" title="ext2文件系统"></a>ext2文件系统</h1><p>ext2文件系统会将磁盘空间格式化为几个部分，分别保存</p>
-<ol>
-<li>MBR ：MBR的作用是把操作系统自己的引导程序读入内存并跳转到操作系统的引导程序。本身与任何操作系统无关。MBR前446字节是主引导记录，后64字节是分区表。最后2个字节是结束标志。（具体我讲）</li>
-<li>inode信息</li>
-<li>真正的数据</li>
-</ol>
-<p>但是如果一个文件系统容量很大，那么将所有的inode和block都放在一起管理很不明智的。所以便有了块组的概念。</p>
-<p>超级块描述了整个文件系统的信息，比如大小，inode/block的总数,已使用数量和剩余数量，其他文件系统的信息。<br>block块组描述符则也类似，描述了一个块组的信息，例如在这个块组中从哪里开始是inode表，从哪里开始是数据块，空闲的inode和数据块还有多少个等等。块描述符和超级块一样，在每个块组开头都有一份拷贝，系统一般只使用到第0组的拷贝。一个块组中的所有inode组成了一个inode表。这里还有块位图，inode位图的概念。</p>
-<h1 id="lvm磁盘组织结构图"><a href="#lvm磁盘组织结构图" class="headerlink" title="lvm磁盘组织结构图"></a>lvm磁盘组织结构图</h1><p><img src="linux-文件系统/图片6.png" alt="图6"></p>
+        <h1 id="版本间的切换"><a href="#版本间的切换" class="headerlink" title="版本间的切换"></a>版本间的切换</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">git log --pretty=online 版本记录</div><div class="line"></div><div class="line">git reset -hard HEAD^ 会退上一个版本</div><div class="line"></div><div class="line">git reflog 记录每一次命令，通过commitID可以回退</div><div class="line"></div><div class="line">git reset --hard  commitID 回退到某个版本</div><div class="line">git log 可以查看提交历史确认commitID</div><div class="line">要重返未来，用git reflog 查看历史命令，确定版本。</div></pre></td></tr></table></figure>
+<h1 id="三种回退文件修改内容"><a href="#三种回退文件修改内容" class="headerlink" title="三种回退文件修改内容"></a>三种回退文件修改内容</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">1. 修改文件，未暂存，git checkout -- file 丢弃工作区的修改</div><div class="line">2. 修改文件，暂存 </div><div class="line">git reset HEAD file 把暂存区的修改撤销掉</div><div class="line">git checkout -- file 丢弃工作区的修改</div><div class="line">3. 修改文件，暂存，已提交本地。使用版本回退。</div><div class="line"></div><div class="line">git diff 查看修改与仓库的不同</div><div class="line"></div><div class="line">提交之前撤销git add</div><div class="line">如果只需要移除一个文件，那么请输入：</div><div class="line">$ git reset &lt;文件名&gt;</div><div class="line">移除所有没有提交的修改：</div><div class="line">$ git reset</div></pre></td></tr></table></figure>
+<p>#关联远程分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git remote add orgin git@github.com:仓库地址。</div><div class="line">git push -u orgin master第一次推送master分支的所有内容，之后就可以使用 git push orgin master推送 最新修改。</div></pre></td></tr></table></figure></p>
+<h1 id="创建并切换分支"><a href="#创建并切换分支" class="headerlink" title="创建并切换分支"></a>创建并切换分支</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git checkout -b newbranch </div><div class="line">创建分支</div><div class="line">git branch newbranch </div><div class="line">切换分支</div><div class="line">git checkout branch</div></pre></td></tr></table></figure>
+<h1 id="拉取远程分支，并创建本地之分"><a href="#拉取远程分支，并创建本地之分" class="headerlink" title="拉取远程分支，并创建本地之分"></a>拉取远程分支，并创建本地之分</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git checkout -b branchname  orgin/branchname 在本地创建和远程对应的分支</div><div class="line">git fetch origin 远程分支名x:本地分支名x。   git checkout branch</div></pre></td></tr></table></figure>
+<h1 id="合并分支-合并dev到当前分支"><a href="#合并分支-合并dev到当前分支" class="headerlink" title="合并分支(合并dev到当前分支)"></a>合并分支(合并dev到当前分支)</h1><p>git merge dev</p>
+<h1 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch 查看本地分支</div><div class="line">git branch -r 查看远程分支</div></pre></td></tr></table></figure>
+<h1 id="推送本地分支到远程"><a href="#推送本地分支到远程" class="headerlink" title="推送本地分支到远程"></a>推送本地分支到远程</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git push origin local_branch:remote_branch</div><div class="line">git branch --set-upstream branchname orgin/branchname 建立本地分支与远程分支关联</div></pre></td></tr></table></figure>
+<h1 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git branch -d newbranch</div><div class="line">git branch -D newbranch(强删)</div><div class="line">git push origin --delete &lt;branchName&gt;  删除远程分支</div></pre></td></tr></table></figure>
+<h1 id="修复bug"><a href="#修复bug" class="headerlink" title="修复bug"></a>修复bug</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">创建分支，修复bug，合并，删除。当手上工作并没有完成时，先把工作现场git stash 储藏现场工作一下，修复完后切回本分支，再git stash pop,回到现场。</div><div class="line">git stash list 查看储藏的工作现场</div><div class="line">git stash apply 恢复stash的内容不删除</div><div class="line">git stash drop 删除储藏的内容</div><div class="line">git stash pop 恢复工作现场并删除</div><div class="line"></div><div class="line">git remove -v 查看远程仓库的信息。</div><div class="line">git push origin beanch-name 推送本地分支到远程仓库，如果推送失败，先git pull远程分支</div></pre></td></tr></table></figure>
+<h1 id="修改错误的提交信息"><a href="#修改错误的提交信息" class="headerlink" title="修改错误的提交信息"></a>修改错误的提交信息</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git commit --amend -m ”YOUR-NEW-COMMIT-MESSAGE”</div><div class="line">git push &lt;remote&gt; &lt;branch&gt; —force (修改推送后的提交信息)</div></pre></td></tr></table></figure>
+<h1 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git tag 查看所有标签</div><div class="line">git tag v1.0 打标签</div><div class="line">git tag v1.0  committID 给指定分支打标签</div><div class="line">git show v1.0 查看标签信息</div><div class="line">git tag -d v1.0 删除标签</div><div class="line">git push orgin v1.0 推送标签到远程分支</div><div class="line">git push orgin --tags  推送全部尚未推送的标签</div></pre></td></tr></table></figure>
+<h2 id="删除已推送的远程仓库的标签"><a href="#删除已推送的远程仓库的标签" class="headerlink" title="删除已推送的远程仓库的标签"></a>删除已推送的远程仓库的标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git tag -d v1.0 删除标签</div><div class="line">git push orgin:refs/tags/v1.0</div></pre></td></tr></table></figure>
+<h1 id="编写文档步骤"><a href="#编写文档步骤" class="headerlink" title="编写文档步骤"></a>编写文档步骤</h1><figure class="highlight plain"><figcaption><span>checkout master  </span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">git pull</div><div class="line">git checkout feature-add_insurance_docs  </div><div class="line">git rebase origin/master  </div><div class="line">git status  </div><div class="line">vim  </div><div class="line">git add .</div><div class="line">git rebase —continue</div><div class="line">hexo g</div><div class="line">hexo s</div><div class="line"> git push -f   </div><div class="line">浏览器</div><div class="line">merge 更新文档步骤</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -543,9 +477,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/LINUX/" rel="tag"># LINUX</a>
-          
-            <a href="/tags/文件系统/" rel="tag"># 文件系统</a>
+            <a href="/tags/git/" rel="tag"># git</a>
           
         </div>
       
@@ -558,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/05/linux-杂记/" rel="next" title="linux 进程与线程">
-                <i class="fa fa-chevron-left"></i> linux 进程与线程
+              <a href="/2017/09/02/LINUX启动过程/" rel="next" title="LINUX启动过程">
+                <i class="fa fa-chevron-left"></i> LINUX启动过程
               </a>
             
           </div>
@@ -568,8 +500,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/05/linux-基础常识/" rel="prev" title="linux 基础常识">
-                linux 基础常识 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/09/09/maven/" rel="prev" title="maven">
+                maven <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -602,8 +534,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/03/05/linux-文件系统/"
-           data-title="linux 文件系统" data-url="http://onaple.duoshuo.com/2017/03/05/linux-文件系统/">
+      <div class="ds-thread" data-thread-key="2017/09/09/git-常用命令/"
+           data-title="git 常用命令" data-url="http://onaple.duoshuo.com/2017/09/09/git-常用命令/">
       </div>
     
   </div>
@@ -723,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文件系统"><span class="nav-number">1.</span> <span class="nav-text">文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Super-Block（超级块）"><span class="nav-number">1.1.</span> <span class="nav-text">1. Super Block（超级块）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#file结构体："><span class="nav-number">1.1.1.</span> <span class="nav-text">file结构体：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#静态共享和动态共享"><span class="nav-number">1.1.2.</span> <span class="nav-text">静态共享和动态共享</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相关的内核数据结构："><span class="nav-number">1.1.3.</span> <span class="nav-text">相关的内核数据结构：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件操作的一般步骤："><span class="nav-number">2.</span> <span class="nav-text">文件操作的一般步骤：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#page-cache机制："><span class="nav-number">3.</span> <span class="nav-text">page cache机制：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ext2文件系统"><span class="nav-number">4.</span> <span class="nav-text">ext2文件系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lvm磁盘组织结构图"><span class="nav-number">5.</span> <span class="nav-text">lvm磁盘组织结构图</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#版本间的切换"><span class="nav-number">1.</span> <span class="nav-text">版本间的切换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三种回退文件修改内容"><span class="nav-number">2.</span> <span class="nav-text">三种回退文件修改内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#创建并切换分支"><span class="nav-number">3.</span> <span class="nav-text">创建并切换分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拉取远程分支，并创建本地之分"><span class="nav-number">4.</span> <span class="nav-text">拉取远程分支，并创建本地之分</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#合并分支-合并dev到当前分支"><span class="nav-number">5.</span> <span class="nav-text">合并分支(合并dev到当前分支)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查看分支"><span class="nav-number">6.</span> <span class="nav-text">查看分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#推送本地分支到远程"><span class="nav-number">7.</span> <span class="nav-text">推送本地分支到远程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除分支"><span class="nav-number">8.</span> <span class="nav-text">删除分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修复bug"><span class="nav-number">9.</span> <span class="nav-text">修复bug</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改错误的提交信息"><span class="nav-number">10.</span> <span class="nav-text">修改错误的提交信息</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标签"><span class="nav-number">11.</span> <span class="nav-text">标签</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#删除已推送的远程仓库的标签"><span class="nav-number">11.1.</span> <span class="nav-text">删除已推送的远程仓库的标签</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编写文档步骤"><span class="nav-number">12.</span> <span class="nav-text">编写文档步骤</span></a></li></ol></div>
             
 
           </div>
