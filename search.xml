@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[设计原则与设计模式]]></title>
+    <url>%2F2017%2F09%2F09%2F%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[六大设计原则一.单一职责原则单一职责原则(Single Responsibility Principle, SRP)：一个类只负责一个功能领域中的相应职责，或者可以定义为：就一个类而言，应该只有一个引起它变化的原因。 二.开闭原则开闭原则(Open-Closed Principle, OCP)：一个软件实体应当对扩展开放，对修改关闭。即软件实体应尽量在不修改原有代码的情况下进行扩展。 三.里氏替换原则里氏代换原则(Liskov Substitution Principle, LSP)：所有引用基类（父类）的地方必须能透明地使用其子类的对象。 四.依赖倒置原则依赖倒转原则(Dependency Inversion Principle, DIP)：抽象不应该依赖于细节，细节应当依赖于抽象。换言之，要针对接口编程，而不是针对实现编程。 五.接口隔离原则接口隔离原则(Interface Segregation Principle, ISP)：使用多个专门的接口，而不使用单一的总接口，即客户端不应该依赖那些它不需要的接口。 六.迪米特法则迪米特法则(Law of Demeter, LoD)：一个软件实体应当尽可能少地与其他实体发生相互作用。 23种设计模式设计模式的分类总体来说设计模式分为三大类： 创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。 结构型模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。 行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[接口与抽象类]]></title>
+    <url>%2F2017%2F09%2F09%2F%E6%8E%A5%E5%8F%A3%E4%B8%8E%E6%8A%BD%E8%B1%A1%E7%B1%BB%2F</url>
+    <content type="text"><![CDATA[设计层面上的区别 接口是对动作的抽象，抽象类是对根源的抽象。抽象类表示的是，这个对象是什么。接口表示的是，这个对象能做什么。 抽象类主要用来抽象类别,接口主要用来抽象功能.当你关注一个事物的本质的时候，用抽象类；当你关注一个操作的时候，用接口。 抽象类是对事物的抽象（类的抽象），接口是对行为的抽象。继承是一个 “是不是”的关系，而接口实现则是 “有没有”的关系。 抽象类是用来捕捉子类的通用特性的 。它不能被实例化，只能被用作子类的超类。抽象类是被用来创建继承层级里子类的模板。 接口 接口是抽象方法的集合。如果一个类实现了某个接口，那么它就继承了这个接口的抽象方法。这就像契约模式，如果实现了这个接口，那么就必须确保使用这些方法。接口只是一种形式，接口自身不能做任何事情。 接口，在表面上是由几个没有主体代码的方法定义组成的集合体，有唯一的名称，可以被类或其他接口所实现。 接口是一组规则的集合，它规定了实现本接口的类或接口必须拥有的一组规则。体现了自然界“如果你是……则必须能……”的理念。 接口是在一定粒度视图上同类事物的抽象表示。注意这里我强调了在一定粒度视图上，因为“同类事物”这个概念是相对的，它因为粒度视图不同而不同。 抽象类 抽象类里面的抽象方法必须全部被子类实现，如果子类不能全部实现，那么子类必须也是抽象类。接口里面的方法也必须全部被子类实现，如果子类不能实现那么子类必须是抽象类。抽象类中的方法都要被实现，所以抽象方法不能是静态的static，也不能是私有的private。 如果一个类里面有抽象方法，那么这个类一定是抽象类。抽象类里面可以没有抽象方法。 抽象类中的修饰符抽象类中的抽象方法（其前有abstract修饰）不能用private、static、synchronized、native访问修饰符修饰。 原因如下： 抽象方法没有方法体，是用来被继承的，所以不能用private修饰； static修饰的方法可以通过类名来访问该方法（即该方法的方法体），抽象方法用static修饰没有意义； 使用synchronized关键字是为该方法加一个锁。。而如果该关键字修饰的方法是static方法。则使用的锁就是class变量的锁。如果是修饰类方法。则用this变量锁。但是抽象类不能实例化对象，因为该方法不是在该抽象类中实现的。是在其子类实现的。所以。锁应该归其子类所有。所以。抽象方法也就不能用synchronized关键字修饰了； native，这个东西本身就和abstract冲突，他们都是方法的声明，只是一个吧方法实现移交给子类，另一个是移交给本地操作系统。如果同时出现，就相当于即把实现移交给子类，又把实现移交给本地操作系统，那到底谁来实现具体方法呢？ 接口修饰符： 接口中的变量会被隐式地指定为public static final变量（定义成其他类型，如private会报错），同时也意味着变量必须进行初始化。接口中的方法会被隐式地指定为public abstract方法（用其他关键字，比如private、protected、static、 final等会报错） 通俗的讲，你认为是要变化的东西，就放在你自己的实现中，不能放在接口中去，接口只是对一类事物的属性和行为更高层次的抽象。对修改关闭，对扩展（不同的实现 implements）开放，接口是对开闭原则的一种体现。 接口用于描述系统对外提供的所有服务,因此接口中的成员常量和方法都必须是公开(public)类型的,确保外部使用者能访问它们； 接口仅仅描述系统能做什么,但不指明如何去做,所以接口中的方法都是抽象(abstract)方法；接口不涉及和任何具体实例相关的细节,因此接口没有构造方法,不能被实例化,没有实例变量，只有静态（static）变量。 接口的中的变量是所有实现类共有的，既然共有，肯定是不变的东西，因为变化的东西也不能够算共有。所以变量是不可变(final)类型，也就是常量了。]]></content>
+      <categories>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>接口</tag>
+        <tag>抽象类</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[maven]]></title>
     <url>%2F2017%2F09%2F09%2Fmaven%2F</url>
     <content type="text"><![CDATA[常用难记命令 mvn clean install -D maven.test.skip=true mvn clean package -U -DfailIfNoTests=false -f pom.xml 创建Maven的普通java项目：mvn archetype:create -DgroupId=packageName -DartifactId=projectName 创建Maven的Web项目： mvn archetype:create -DgroupId=packageName -DartifactId=webappName -DarchetypeArtifactId=maven-archetype-webapp 生成eclipse项目：mvn eclipse:eclipse 生成idea项目：mvn idea:idea 跳过测试: mvn install -Dmaven.test.skip=true 指定端口: mvn -Dmaven.tomcat.port=9090 Jar包冲突：ClassNotFoundException，NoSuchFieldException，NoSuchMethodException 解决jar包冲突 1mvn dependency:tree -Dverbose 当遇到jar包冲突时，我们首先确定是哪个jar包冲突了，这个很容易，看我们调用的类或方法，是属于哪个Jar包。然后就是要找出冲突了，我这里使用命令 1mvn dependency:tree -Dverbose -Dincludes=&lt;groupId&gt;:&lt;artifactId&gt; 填写上Jar包的groupId和artifactId，可以只有一个，但是中间的冒号不要少，这样就会输出依赖树，而且是仅包含这个Jar包的依赖树，这样那些地方依赖了这个Jar包的那个版本就一目了然了。例如，我的项目中notify-common包存在冲突，我们使用命令 1mvn dependency:tree -Dverbose -Dincludes=:notify-common 加上Dincludes或者Dexcludes说出你喜欢或讨厌，dependency:tree就会帮你过滤出来：过滤串使用groupId:artifactId:version的方式进行过滤，可以不写全啦，如： Java代码1mvn dependency:tree -Dverbose -Dincludes=asm:asm 排除不要的jar包。在依赖包中排除相应的包。在POM排除掉依赖，OK了 12345671. &lt;exclusions&gt; 2. &lt;!-- 这个就是我们要加的片断 --&gt; 3. &lt;exclusion&gt; 4. &lt;artifactId&gt;asm&lt;/artifactId&gt; 5. &lt;groupId&gt;asm&lt;/groupId&gt; 6. &lt;/exclusion&gt; 7. &lt;/exclusions&gt;]]></content>
