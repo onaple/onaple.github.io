@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="onaple‘s Blog">
 <meta property="og:description" content="Spring mvc请求流程 发送请求到前端控制器DispatcherServlet； DispatcherServlet调用HandleMapping处理器映射器； 处理器映射器根据请求的URL找到具体的处理器，生成处理器对象以及处理器拦截器一并返回给DispatcherServlet； DispatcherServlet通过HandlerAdapter处理器适配器调用处理器； 执行处理器（自己">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-17T11:36:08.000Z">
+<meta property="og:updated_time" content="2017-09-17T11:41:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring MVC">
 <meta name="twitter:description" content="Spring mvc请求流程 发送请求到前端控制器DispatcherServlet； DispatcherServlet调用HandleMapping处理器映射器； 处理器映射器根据请求的URL找到具体的处理器，生成处理器对象以及处理器拦截器一并返回给DispatcherServlet； DispatcherServlet通过HandlerAdapter处理器适配器调用处理器； 执行处理器（自己">
@@ -433,10 +433,9 @@
 <li>DispatcherServlet响应用户；</li>
 </ol>
 <h1 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h1><ol>
-<li>DispatcherServlet(前端控制器)</li>
-</ol>
-<pre><code>dispatcherServlet是整个流程控制的中心，由它调用其它组件处理用户的请求，dispatcherServlet的存在降低了组件之间的耦合性。
-</code></pre><ol>
+<li><p>DispatcherServlet(前端控制器)</p>
+<p> dispatcherServlet是整个流程控制的中心，由它调用其它组件处理用户的请求，dispatcherServlet的存在降低了组件之间的耦合性。</p>
+</li>
 <li><p>HandlerMapping（处理器映射器）</p>
 <p> HandlerMapping负责根据用户请求url找到Handler即处理器，springmvc提供了不同的映射器实现不同的映射方式，例如：配置文件方式，实现接口方式，注解方式等。</p>
 </li>
