@@ -1608,7 +1608,7 @@ linux内核1.内存管理:分段分页
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://onaple.duoshuo.com/2017/03/05/linux-内存管理/">
+  <link itemprop="mainEntityOfPage" href="http://onaple.duoshuo.com/2017/03/05/linux-杂记/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="onaple">
@@ -1633,8 +1633,8 @@ linux内核1.内存管理:分段分页
             
               
                 
-                <a class="post-title-link" href="/2017/03/05/linux-内存管理/" itemprop="url">
-                  linux 内存管理
+                <a class="post-title-link" href="/2017/03/05/linux-杂记/" itemprop="url">
+                  linux 进程与线程
                 </a>
               
             
@@ -1691,8 +1691,8 @@ linux内核1.内存管理:分段分页
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/03/05/linux-内存管理/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/05/linux-内存管理/" itemprop="commentCount"></span>
+                <a href="/2017/03/05/linux-杂记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/05/linux-杂记/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1720,11 +1720,14 @@ linux内核1.内存管理:分段分页
       
         
           
-          CPU位数和操作系统位数的关系：操作系统的位数其实是说的CPU的位数。因为计算机的所有功能都是基于CPU的指令集，也就是说，操作系统的所有功能几乎都跟CPU指令集有关系，操作系统的所有功能都会被翻译成一组CPU指令集。64位CPU的指令集是64位的，要想使用64位的功能，那么操作系统也必须是64位的
+          什么是进程？
+进程是资源分配和和独立运行的单位；
+进程是操作系统中可执行程序的一次执行，换句话说进程就是拥有资源（cpu,内存，磁盘，进程ID，文件描述符，虚拟地址空间，端口号等）的程序；它是动态的；
+一个进程是由程序控制块（pcb也就是task_struct结构体）,代码和数据组成；其中进程控制块
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/03/05/linux-内存管理/#more" rel="contents">
+            <a class="btn" href="/2017/03/05/linux-杂记/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
